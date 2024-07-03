@@ -1,4 +1,4 @@
-function [] = vardemont(size, DEBUG)
+function [] = vandermonde(size, DEBUG)
     size = str2num(size);
     DEBUG = str2num(DEBUG);
 
