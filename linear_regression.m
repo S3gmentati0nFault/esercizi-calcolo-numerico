@@ -1,7 +1,12 @@
-function [] = linear_regression(N, DEBUG)
+function [linear_coefficients] = linear_regression(N, DEBUG)
     N = str2double(N);
     DEBUG = str2double(DEBUG);
     data_dim = 1000;
+
+    if (N < 0)
+        linear_coefficients = nan(1, 2);
+        return;
+    end
 
     % Generazione casuale dei punti
     point_gen_start = tic;
@@ -30,20 +35,24 @@ function [] = linear_regression(N, DEBUG)
     [L, U, P] = lu(M);
     T = L \ P * b;
     sol = U \ T;
-    lu_time = toc(matrix_const_start);
+    lu_time = toc(lu_start);
     if (DEBUG)
         disp(sol);
     end
     disp("<INF> La fattorizzazione LU ha richiesto: " + lu_time + " secondi");
+    linear_coefficients = sol;
 
     % Plot della soluzione trovata
-    line = @(x) sol(1) + x * sol(2);
-    line_y = zeros(1, data_dim);
-    for i=1:data_dim
-        line_y(i) = line(i);
+    if (DEBUG)
+        line = @(x) sol(1) + x * sol(2);
+        line_y = zeros(1, data_dim);
+        for i=1:data_dim
+            line_y(i) = line(i);
+        end
+        plot(1:data_dim, line_y, 'r');
+        hold on
+        plot(x, y, 'o');
+        hold off
     end
-    plot(1:data_dim, line_y, 'r');
-    hold on
-    plot(x, y, 'o');
-    hold off
+    return;
 end
