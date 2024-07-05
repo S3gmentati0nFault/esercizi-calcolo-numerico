@@ -1,4 +1,4 @@
-% Gauss-Seidel solver persistemi lineari
+% Solver di Jacobi per sistemi lineari
 % 
 % input:
 %       M - Matrice 2d generica
@@ -8,9 +8,9 @@
 %       nitmax - Numero massimo di iterazioni
 % 
 % output:
-%       sol - Soluzione del metodo di Gauss
+%       sol - Soluzione del metodo di Jacobi
 %       nit - Numero di iterazioni del metodo
-function [sol, nit] = gauss_seidel(M, x, b, epsilon, nitmax)
+function [sol, nit] = jacobi(M, x, b, epsilon, nitmax)
 
 arguments
     M (:,:) double {mustBeFloat}
@@ -19,11 +19,11 @@ arguments
     epsilon (1,1) double {mustBeScalarOrEmpty}
     nitmax (1,1) double {mustBeScalarOrEmpty}
 end
-
-    [D, L, U, B] = decompositor("gauss", M);
+    
+    [D, L, U, B] = decompositor("jacobi", M);
 
     for i=1:nitmax
-        x_next = (D - L) \ (b + U * x);
+        x_next = D \ ((L + U) * x + b);
         
         % Condizione di iterazione
         if (max(norm(b - M * x) / norm(b), norm(x_next - x) / norm(x)) < epsilon)

@@ -1,17 +1,19 @@
 % Costruttore di matrici tridiagonali
+% 
+% input:
+%       size - Dimensione della matrice
+%       d - Elemento da inserire lungo la diagonale
+%       du - Elemento da inserire lungo la diagonale superiore
+%       dl - Elemento da inserire lungo la diagonale inferiore
+% 
+% output:
+%       M - Matrice tridiagonale
 function M = tridiag(size, d, du, dl)
 
 arguments
-    % Dimensione della matrice
     size (1, 1) {mustBeNumeric, mustBePositive}
-
-    % Elemento da inserire lungo la diagonale
     d (1, 1) double
-
-    % Elemento da inserire lungo la diagonale superiore
     du (1, 1) double
-
-    % Elemento da inserire lungo la diagonale inferiore
     dl (1, 1) double
 end
 
