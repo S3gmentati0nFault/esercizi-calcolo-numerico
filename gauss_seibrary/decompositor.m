@@ -5,6 +5,14 @@
 % U - matrice triangolare alta (negativa)
 % B - matrice di Jacobi o di Gauss-Siedel
 function [D, L, U, B] = decompositor(mode, A)
+arguments
+    % Tipo di matrice di iterazione
+    mode (1, 1) string {mustBeText, mustBeScalarOrEmpty}
+    
+    % Matrice di riferimento
+    A (:, :) double
+end
+
     computable = 1;
 
     if (mode ~= "jacobi" && mode ~= "gauss")
