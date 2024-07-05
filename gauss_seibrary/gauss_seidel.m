@@ -24,24 +24,19 @@ end
     if (test_type ~= "inc" && test_type ~= "res")
         test_type = "inc";
     end
-    
-    if(test_type == "inc")
-        cond = @(x, x_next) (norm(x_next - x) / norm(x));
-    else
-        cond = @(x, x_next) (norm(b - M * x) / norm(b));
-    end
 
     [D, L, U, B] = decompositor("gauss", M);
 
     for i=1:nitmax
-        x_next = B * x + inv(D - L) * b;
+        x_next = (D - L) \ (b + U * x);
         
         % Condizione di iterazione
-        if (cond(x, x_next) < epsilon)
+        if (max(norm(b - M * x) / norm(b), norm(x_next - x) / norm(x)) < epsilon)
             disp("<INF> Il metodo di iterazione è terminato con la " + i + "-esima iterazione");
             sol = x_next;
             return;
         end
+        
         x = x_next;
     end
 
