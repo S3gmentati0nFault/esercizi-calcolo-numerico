@@ -1,12 +1,22 @@
-% Fattorizzazione di Cholesky
+% FATTORIZZAZIONE DI CHOLESKY
+% 
+% input:
+%       M - Matrice 2d generica
+%       b - Vettore dei termini noti
+% 
+% output:
+%       R - Fattorizzazione di Cholesky
+%       back - Vettore dei termini noti associati alla risoluzione inversa
+%       del sistema
+%       sol - Vettore soluzione
 function [R, back, sol] = cholesky(M, b)
 
 arguments
     % Matrice 2d generica
-    M (:, :) double
+    M (:, :) double {mustBeFloat, mustBeNonmissing}
 
     % Vettore dei termini noti
-    b (:, 1) double
+    b (:, 1) double {mustBeFloat, mustBeNonmissing}
 end
 
     if (~ choleskable(M))

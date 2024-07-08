@@ -1,10 +1,16 @@
-% Funzione che controlla se una matrice è adeguata all'applicazione della
-% fattorizzazione di Cholesky
+% CHECKER DELLE CONDIZIONI DI CHOLESKY
+% 
+% input:
+%       M - Matrice 2d generica
+% 
+% output:
+%       flag - Valore logico che dice se la matrice incontra i requisiti
+%       per l'applicazione del metodo di Cholesky
 function flag = choleskable(M)
 
 arguments
     % Matrice 2d generica
-    M (:, :) double
+    M (:, :) double {mustBeNonmissing}
 end
 
     if (~issymmetric(M))
