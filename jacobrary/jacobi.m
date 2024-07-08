@@ -1,4 +1,4 @@
-% Solver di Jacobi per sistemi lineari
+% SOLVER DI JACOBI PER SISTEMI LINEARI
 % 
 % input:
 %       M - Matrice 2d generica
@@ -37,6 +37,6 @@ end
     end
 
     disp("<INF> Siamo andati fuori dal numero massmo di iterazioni");
-    nit = 200;
+    nit = nitmax;
     sol = x;
 end
