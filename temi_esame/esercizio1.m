@@ -1,7 +1,7 @@
 function [l] = esercizio1()
     % Inizializzazione
     v = linspace(0, exp(1), 9);
-    M = tridiag(10, 3, 1, -1);
+    M = tridiag(10, 3, 0, -1);
     M = M + diag(v, 1);
     b = 10 * ones(10,1);
 
