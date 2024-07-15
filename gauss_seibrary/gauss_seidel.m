@@ -20,7 +20,7 @@ arguments
     nitmax (1,1) double {mustBeScalarOrEmpty}
 end
 
-    [D, L, U, B] = decompositor("gauss", M);
+    [D, L, U, B] = gauss_decompositor(M);
 
     for i=1:nitmax
         x_next = (D - L) \ (b + U * x);

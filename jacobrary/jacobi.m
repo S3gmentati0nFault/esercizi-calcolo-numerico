@@ -20,7 +20,7 @@ arguments
     nitmax (1,1) double {mustBeScalarOrEmpty}
 end
     
-    [D, L, U, B] = decompositor("jacobi", M);
+    [D, L, U, B] = jacobi_decompositor(M);
 
     for i=1:nitmax
         x_next = D \ ((L + U) * x + b);
