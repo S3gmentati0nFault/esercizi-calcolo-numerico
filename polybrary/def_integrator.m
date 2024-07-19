@@ -1,12 +1,12 @@
-% CALCOLATRICE PER INTEGRALI
+% CALCOLATRICE PER INTEGRALI DI POLINOMI
 % 
 % input:
-%       poly - coefficienti del polinomio
-%       a - inizio dell'intervallo di integrazione
-%       b - fine dell'intervallo di integrazione
+%       poly - Coefficienti del polinomio
+%       a - Inizio dell'intervallo di integrazione
+%       b - Fine dell'intervallo di integrazione
 % 
 % output:
-%       integral - risultato del processo di integrazione
+%       integral - Risultato del processo di integrazione
 function [integral] = def_integrator(poly, a, b)
 
 arguments

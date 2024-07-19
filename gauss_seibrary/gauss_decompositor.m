@@ -1,9 +1,13 @@
-% Decomposizione diagonale
-
-% D - matrice diagonale
-% L - matrice triangolare bassa (negativa)
-% U - matrice triangolare alta (negativa)
-% B - matrice di Jacobi o di Gauss-Siedel
+% DECOMPOSITOR PER LA MATRICE DI GAUSS-SEIDEL
+% 
+% input:
+%       A - Matrice 2d generica
+% 
+% output:
+%       D - Matrice diagonale che scaturisce dalla decomposizione
+%       L - Matrice triangolare bassa che scaturisce dalla decomposizione
+%       U - Matrice triangolare alta che scaturisce dalla decomposizione
+%       B - Matrice di iterazione di GS
 function [D, L, U, B] = gauss_decompositor(A)
 arguments
     % Matrice di riferimento

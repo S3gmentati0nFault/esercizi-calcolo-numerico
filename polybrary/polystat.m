@@ -1,12 +1,12 @@
 % FINDER PER PUNTI STAZIONARI SU FUNZIONI POLINOMIALI
 % 
 % input:
-%       poly - coefficienti del polinomio in questione
+%       poly - Coefficienti del polinomio in questione
 % 
 % output:
-%       max - vettore dei punti di massimo
-%       min - vettore dei punti di minimo
-%       inflexion - vettore dei punti di flesso
+%       max - Vettore dei punti di massimo
+%       min - Vettore dei punti di minimo
+%       inflexion - Vettore dei punti di flesso
 function [max, min, inflexion] = polystat(poly)
 
 arguments

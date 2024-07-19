@@ -1,3 +1,12 @@
+% CALCOLATORE PER L'ERRORE ASSOLUTO E RELATIVO
+% 
+% input:
+%       value - Valore approssimato
+%       actual_value - Valore corretto
+% 
+% output:
+%       ae - Errore assoluto (Absolute Error)
+%       re - Errore relativo (Relative Error)
 function [ae, re] = error_calculator(value, actual_value)
 
 arguments

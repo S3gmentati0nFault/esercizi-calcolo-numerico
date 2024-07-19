@@ -1,4 +1,4 @@
-% Costruttore di matrici tridiagonali
+% COSTRUTTORE DI MATRICI TRIDIAGONALI
 % 
 % input:
 %       size - Dimensione della matrice

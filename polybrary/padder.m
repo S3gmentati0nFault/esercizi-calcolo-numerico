@@ -1,3 +1,14 @@
+% PADDER PER POLINOMI
+% 
+% input:
+%       p - Coefficienti di un polinomio generico
+%       q - Coefficienti di un polinomio generico
+% 
+% output:
+%       padded_min - Coefficienti del polinomio più piccolo con padding di
+%       0
+%       max - Coefficienti del polinomio più grande
+%       equal - Flag di uguaglianza
 function [padded_min, max, equal] = padder(p, q)
 arguments
     p (1, :) double

@@ -1,3 +1,10 @@
+% COMPATTATORE DI POLINOMI
+% 
+% input:
+%       poly - Coefficienti del generico polinomio
+% 
+% output:
+%       res - Coefficienti del polinomio compattato
 function res = compactor(poly)
 arguments
     poly (1, :) double
